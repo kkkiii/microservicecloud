@@ -1,0 +1,19 @@
+encrypted.value: '{cipher}a48d0aadb3725e66af39022bb7cf17eeb28605989181e5928d03da29017484eb'
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${spring.application.name}:${server.port}
